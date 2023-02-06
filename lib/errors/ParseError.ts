@@ -23,12 +23,12 @@ export class ParseError extends ALogableError {
     return 'Target content of process:'
   }
 
-  logSelf( timestampLogger: ( text: string ) => void, logger: ( text?: string ) => void ): void {
-    timestampLogger( this.formatting.error( this.formatting.title( this.title ) ) )
-    logger( this.formatting.error( this.message ) )
-    logger()
-    logger( this.formatting.error( this.formatting.subtitle( this.subtitle ) ) )
-    const squaredContent = this.getRectContent( this.content )
-    logger( this.formatting.bg( highlight( squaredContent, { language: this.language } ) ) )
+  logSelf(): void {
+    ALogableError.ci.error( this.title )
+    ALogableError.ci.subError( this.message )
+    ALogableError.ci.emptyRow()
+    ALogableError.ci.subError( this.subtitle )
+    const rected = this.getRectContent( this.content )
+    ALogableError.ci.code( highlight( rected, { language: this.language } ) )
   }
 }

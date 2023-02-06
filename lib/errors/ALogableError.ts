@@ -1,7 +1,7 @@
-import { formatting } from '../helpers/formatting.js'
+import { ci, CI } from './../helpers/ci.js'
 
 export abstract class ALogableError extends Error {
-  protected formatting = formatting
+  static ci: CI = ci
 
   protected getRectContent( content: string ): string {
     const rows: string[] = content.split( '\n' )
@@ -29,5 +29,5 @@ export abstract class ALogableError extends Error {
     return resultContent
   }
 
-  abstract logSelf( timestampLogger: ( text: string ) => void, logger: ( text?: string ) => void ): void;
+  abstract logSelf(): void;
 }

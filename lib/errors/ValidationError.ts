@@ -13,22 +13,21 @@ export class ValidationError extends ALogableError {
     this.validations = validation
   }
 
-  logSelf( timestampLogger: ( text: string ) => void, logger: ( text?: string ) => void ) {
-    timestampLogger( this.formatting.error( this.formatting.title( 'Validations were not passed' ) ) )
-    logger( this.formatting.error( this.formatting.subtitle( `Target "${ this.target }"` ) ) )
-    logger()
-    logger( this.formatting.error( this.formatting.subtitle( 'Errors list:' ) ) )
-    logger()
+  logSelf() {
+    ALogableError.ci.error( 'Validations were not passed' )
+    ALogableError.ci.subError( `Target "${ this.target }"` )
+    ALogableError.ci.emptyRow()
+    ALogableError.ci.subError( 'Errors list:' )
+    ALogableError.ci.emptyRow()
 
     let validationCounter = 0
     for ( const validation of this.validations ) {
       if ( this.validations.length !== 1 ) {
-        logger( `Error ${ validationCounter++ }` )
+        ALogableError.ci.subError( `Error ${ validationCounter++ }` )
       }
-
       const rected = this.getRectContent( JSON.stringify( validation, null, 2 ) )
-      logger( this.formatting.bg( highlight( rected, { language: 'json' } ) ) )
-      logger()
+      ALogableError.ci.code( highlight( rected, { language: 'json' } ) )
+      ALogableError.ci.emptyRow()
     }
   }
 }
