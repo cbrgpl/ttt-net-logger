@@ -3,3 +3,11 @@ export { SessionUuid } from './core/SessionUuid.js'
 
 export { NetworkAPIDecorator } from './core/decorators/NetworkApiDecorator.js'
 export { FetchDecorator } from './core/decorators/FetchDecorator.js'
+
+export {
+  IInnerParams,
+  IClientParams,
+
+  ISession,
+  IBaseLog,
+} from './types/index.js'

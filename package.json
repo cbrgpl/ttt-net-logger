@@ -1,6 +1,6 @@
 {
-  "name": "ttt-network-logger",
-  "version": "1.0.0",
+  "name": "ttt-net-logger",
+  "version": "1.0.1",
   "type": "module",
   "description": "Utilities which expose classes to decorate any Network API and do logging",
   "main": "dist/index.js",
@@ -14,13 +14,14 @@
   "keywords": [
     "logger",
     "network",
+    "fetch logger",
     "api",
     "decorator"
   ],
   "author": "cbrgpl",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^18.11.18",
+    "@types/node": "^18.13.0",
     "@types/uuid": "^9.0.0",
     "@types/yargs": "^17.0.20",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
