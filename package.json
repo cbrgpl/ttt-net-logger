@@ -1,6 +1,6 @@
 {
   "name": "ttt-net-logger",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "type": "module",
   "description": "Utilities which expose classes to decorate any Network API and do logging",
   "main": "dist/index.js",
