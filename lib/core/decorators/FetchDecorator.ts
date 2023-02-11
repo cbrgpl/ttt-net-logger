@@ -20,7 +20,7 @@ export class FetchDecorator extends NetworkAPIDecorator {
   private text = window.Response.prototype.text
 
   decorate(): void {
-    ci.step( 'Fetch decorated' )
+    ci.step( 'Fetch decorated', true )
     // eslint-disable-next-line @typescript-eslint/no-this-alias
     const decorator = this
 
@@ -67,7 +67,7 @@ export class FetchDecorator extends NetworkAPIDecorator {
   }
 
   undecorate(): void {
-    ci.step( 'Fetch undecorated' )
+    ci.step( 'Fetch undecorated', true )
     window.fetch = this.fetch
   }
 

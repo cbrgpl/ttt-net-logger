@@ -19,7 +19,7 @@ export abstract class Logger {
     this.params = getReadyToUseParams( params )
     this.session = new SessionUuid( this.params.sessionVar )
 
-    ci.step( 'Logger initialized' )
+    ci.step( 'Logger initialized', true )
     ci.enabled = this.params.enableConsole
   }
 

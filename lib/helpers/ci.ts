@@ -16,8 +16,8 @@ export const formatting: Record<FormattingTypes, ( text: string ) => string> = {
 export class CI {
   enabled = true
 
-  step( summary: string ) {
-    this.timestampLog( formatting.step( summary ) )
+  step( summary: string, ignoreEnabled?: boolean ) {
+    this.timestampLog( formatting.step( summary ), ignoreEnabled )
   }
 
   log( summary: string ) {
@@ -44,13 +44,17 @@ export class CI {
     console.log()
   }
 
-  private timestampLog( text: string ): void {
-    console.log( `${ timestamp.utc( 'HH:mm:ss:ms' ) } ${ text }` )
+  private timestampLog( text: string, ignoreEnabled?: boolean ): void {
+    if ( this.enabled || ignoreEnabled ) {
+      console.log( `${ timestamp.utc( 'HH:mm:ss:ms' ) } ${ text }` )
+    }
   }
 
-  private offsetLog( text?: string ): void {
-    const paddingLeft = ' '.repeat( 13 )
-    console.log( text ? text.split( '\n' ).map( row => paddingLeft + row ).join( '\n' ) : '' )
+  private offsetLog( text?: string, ignoreEnabled?: boolean ): void {
+    if ( this.enabled || ignoreEnabled ) {
+      const paddingLeft = ' '.repeat( 13 )
+      console.log( text ? text.split( '\n' ).map( row => paddingLeft + row ).join( '\n' ) : '' )
+    }
   }
 }
 

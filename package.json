@@ -1,6 +1,6 @@
 {
   "name": "ttt-net-logger",
-  "version": "1.0.1",
+  "version": "1.0.12",
   "type": "module",
   "description": "Utilities which expose classes to decorate any Network API and do logging",
   "main": "dist/index.js",
@@ -9,6 +9,7 @@
     "/dist"
   ],
   "scripts": {
+    "prepublish": "tsc",
     "compile": "npx tsc --project tsconfig.json --watch"
   },
   "keywords": [
