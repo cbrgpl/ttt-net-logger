@@ -67,7 +67,7 @@ type IClientParams = {
 
 | Property      | Description                                                          |
 | ----------    | -------------------------------------------------------------------- |
-| enableConsole | Allows you to turn on/off the output of the console log[^console log]|
+| enableConsole | Allows you to turn on/off the output of the console log[^console_log]|
 | ignore        | List of URLs that do not need to be logged                           |
 | sessionVar    | Name of variable in sessionStorage                                   |
 
@@ -242,5 +242,5 @@ abstract sendLog( log: IBaseLog ): void
 ```
 The abstract method you need to implement to send the log to the server.
 
-[^console log]: Format - *HH:MM:SS:MS METHOD URL*
+[^console_log]: Format - *HH:MM:SS:MS METHOD URL*
 
