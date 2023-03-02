@@ -95,7 +95,7 @@ export class FetchDecorator extends NetworkAPIDecorator {
         body: responseData,
       },
 
-      userAgent: navigator.userAgent,
+      userAgent: window.navigator.userAgent,
     }
 
     return log

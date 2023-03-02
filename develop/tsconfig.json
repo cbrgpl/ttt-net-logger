@@ -1,0 +1,16 @@
+{
+    "files": [ "./index.ts" ],
+    "compilerOptions": {
+      "target": "ESNext",
+      "module": "ES2022",
+      "moduleResolution": "nodenext",
+      "esModuleInterop": true,
+      "outDir": "./",
+      "strictNullChecks": true,
+      "sourceMap": true,
+      "lib": [ "ES2022" ],
+      "noImplicitAny": true,
+      "allowSyntheticDefaultImports": true,
+    }
+}
+  

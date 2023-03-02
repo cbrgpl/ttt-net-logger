@@ -10,7 +10,8 @@
   ],
   "scripts": {
     "prepublish": "tsc",
-    "compile": "npx tsc --project tsconfig.json --watch"
+    "compile": "npx tsc --project tsconfig.json",
+    "dev": "npx tsc --project develop/tsconfig.json --watch"
   },
   "keywords": [
     "logger",
@@ -23,6 +24,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^18.13.0",
+    "@types/node-fetch": "^2.6.2",
     "@types/uuid": "^9.0.0",
     "@types/yargs": "^17.0.20",
     "@typescript-eslint/eslint-plugin": "^5.48.0",

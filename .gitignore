@@ -4,4 +4,8 @@ dist
 
 package-lock.json
 .env
-lib/dev.ts
+
+develop/index.js
+develop/index.js.map
+develop/logger.js
+develop/logger.js.map

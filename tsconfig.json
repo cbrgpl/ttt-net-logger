@@ -1,4 +1,8 @@
 {
+  "exclude": [ "./develop" ],
+  "include": [
+    "./lib/**/*"
+  ],
   "compilerOptions": {
     "target": "ESNext",
     "module": "ES2022",
