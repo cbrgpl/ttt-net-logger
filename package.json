@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "prepublish": "tsc",
-    "compile": "npx tsc --project tsconfig.json",
+    "compile": "npx tsc --watch",
     "dev": "npx tsc --project develop/tsconfig.json --watch"
   },
   "keywords": [
