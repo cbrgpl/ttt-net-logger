@@ -15,7 +15,7 @@ export abstract class Logger {
   private _decorator: NetworkAPIDecorator
   private fetch = window.fetch
 
-  constructor( params: IClientParams ) {
+  constructor( params: IClientParams = {} ) {
     this.params = getReadyToUseParams( params )
     this.session = new SessionUuid( this.params.sessionVar )
 

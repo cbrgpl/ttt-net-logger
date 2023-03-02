@@ -3,10 +3,7 @@ import './setupNodeFetch.js'
 import { DeveloperLogger } from './logger.js'
 import { FetchDecorator } from './../dist/index.js'
 
-const logger = new DeveloperLogger( {
-  enableConsole: true,
-  ignore: [ /ignore-url.com/, /ignore2-url.com/ ],
-} )
+const logger = new DeveloperLogger()
 const decorator = new FetchDecorator()
 
 logger.decorator = decorator
