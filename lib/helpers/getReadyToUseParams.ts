@@ -4,7 +4,6 @@ import { validate } from './validate.js'
 import { configValidation } from '../schemas/config.validation.js'
 
 const getDefaultParams = (): IInnerParams => ( {
-  project: null,
   enableConsole: false,
   ignore: null,
   sessionVar: 'ttt_logger_session',

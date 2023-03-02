@@ -59,17 +59,17 @@ class UrOwnParticular extends Logger {
 
 ```ts
 type IClientParams = {
-    enableConsole?: boolean | undefined;
-    ignore?: string[] | undefined;
-    sessionVar?: string | undefined;
+    enableConsole?: boolean;
+    ignore?: RegExp[];
+    sessionVar?: string;
 }
 ```
 
-| Property  | Description                                                              |
-| --------- | ------------------------------------------------------------------------ |
-| enableConsole | Позволяет включать/выключать вывод консольного лога[^консольный_лог] |
-| ignore | Список URL адресов, которые не нужно логгировать                            |
-| sessionVar | Название переменной в sessionStorage                                    |
+| Property  | Description                                                                                       |
+| --------- | ------------------------------------------------------------------------                          |
+| enableConsole | Позволяет включать/выключать вывод консольного лога[^консольный_лог]                          |
+| ignore | Список регулярных выражений для URL адресов, которые не нужно логгировать                            |
+| sessionVar | Название переменной в sessionStorage                                                             |
 
 # API
 

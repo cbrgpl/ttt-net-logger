@@ -26,9 +26,12 @@ export abstract class Logger {
   set decorator( decorator: NetworkAPIDecorator ) {
     if ( this._decorator ) {
       this._decorator.undecorate()
+      this._decorator.ignore = null
     }
 
     decorator.logger = this
+    decorator.ignore = this.params.ignore
+
     this._decorator = decorator
   }
 

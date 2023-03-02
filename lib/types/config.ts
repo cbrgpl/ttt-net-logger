@@ -1,7 +1,7 @@
 interface IParams {
   enableConsole: boolean;
   sessionVar: string;
-  ignore: string[];
+  ignore: RegExp[];
 }
 
 type ToNullable<T extends object> = {

@@ -59,17 +59,17 @@ Parameters that are passed to the construct Logger.
 
 ```ts
 type IClientParams = {
-    enableConsole?: boolean | undefined;
-    ignore?: string[] | undefined;
-    sessionVar?: string | undefined;
+    enableConsole?: boolean;
+    ignore?: RegExp[];
+    sessionVar?: string;
 }
 ```
 
-| Property      | Description                                                          |
-| ----------    | -------------------------------------------------------------------- |
-| enableConsole | Allows you to turn on/off the output of the console log[^console_log]|
-| ignore        | List of URLs that do not need to be logged                           |
-| sessionVar    | Name of variable in sessionStorage                                   |
+| Property      | Description                                                                                  |
+| ----------    | -------------------------------------------------------------------------------------------- |
+| enableConsole | Allows you to turn on/off the output of the console log[^console_log]                        |
+| ignore        | List of regular expressions for URLs that do not need to be logged                           |
+| sessionVar    | Name of variable in sessionStorage                                                           |
 
 # API
 
