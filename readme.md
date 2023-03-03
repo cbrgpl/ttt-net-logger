@@ -16,12 +16,8 @@ npm install ttt-net-logger
 ```ts
 import { SessionUuid, ISession } from 'ttt-net-logger'
 
-interface CRMSession extends ISession {
-  expiryAt: number;
-}
-
 export class UrOwnSessionUuid extends SessionUuid {
-  protected generateSession(): CRMSession {
+  protected generateSession(): ISession {
     // Your own implementation
   }
 
@@ -37,7 +33,12 @@ import { Logger, IBaseLog, IClientParams } from 'ttt-net-logger'
 import { UrOwnSessionUuid } from './session'
 
 class UrOwnParticular extends Logger {
-    declare protected session: CRMSessionUuid
+    declare protected session: UrOwnSessionUuid
+
+    constructor( params?: IClientParams ) {
+      super()
+      this.session = new UrOwnSessionUuid( this.params.sessionVar )
+    }
 
     async sendLog( log: IBaseLog ): Promise<void> {
     // Allows you to send a request that will not be logged
