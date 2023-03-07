@@ -4,7 +4,7 @@ import { NetworkAPIDecorator } from './NetworkApiDecorator.js'
 import { IBaseLog } from '../../types/log.js'
 
 interface IModifiedResponse extends Response {
-  _loggerMetaProp: {
+  _loggerMetaProp?: {
     url: string;
     init?: RequestInit;
   };
@@ -73,6 +73,12 @@ export class FetchDecorator extends NetworkAPIDecorator {
 
   protected onResponseReaded( response: IModifiedResponse, data?: any ): void {
     const loggerMeta = response._loggerMetaProp
+    // Because of decorator starts to work when first request sent, so there is no _loggerMetaProp
+    // And when it tries to read loggerMeta.url there is error
+    if ( !loggerMeta ) {
+      return
+    }
+
     const log =  this.getLog( loggerMeta.url, response, loggerMeta.init,  data )
     super.sendLog( log )
   }
